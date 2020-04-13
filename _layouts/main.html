@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+</head>
+
+<body>
+
+    <div class="site">
+        <header class="site-header">
+            <h1><a href="/"> {{ site.title }} </a></h1>
+            <p>Сладкарска къща "МАВЕ" предоставя възможност на всички любители
+                и сладкари, възможност да се развиват чрез нови рецепти и идеи
+                в сладкарстовото. Приготвени само с истински продукти, наслаждавайки
+                се на домашният вкус!</p>
+
+            <nav>
+                <ul>
+                    {% for page in site.pages %}
+                    {% if page.title %}
+                    <li><a href="{{ page.url }}"> {{ page.title }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+
+        </header>
+
+
+    </div>
+    {{ content }}
+
+</body>
+
+</html>
